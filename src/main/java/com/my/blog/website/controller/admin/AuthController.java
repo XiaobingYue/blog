@@ -67,9 +67,9 @@ public class AuthController extends BaseController {
         try {
             UserVo user = usersService.login(username, password);
             request.getSession().setAttribute(WebConst.LOGIN_SESSION_KEY, user);
-            if (StringUtils.isNotBlank(remeber_me)) {
-                TaleUtils.setCookie(response, user.getUid());
-            }
+            //if (StringUtils.isNotBlank(remeber_me)) {
+            //    TaleUtils.setCookie(response, user.getUid());
+            //}
             logService.insertLog(LogActions.LOGIN.getAction(), null, request.getRemoteAddr(), user.getUid());
         } catch (Exception e) {
             error_count = null == error_count ? 1 : error_count + 1;
@@ -93,18 +93,13 @@ public class AuthController extends BaseController {
      * @param session
      * @param response
      */
-    @RequestMapping("/logout")
-    public void logout(HttpSession session, HttpServletResponse response, HttpServletRequest request) {
+    @GetMapping("/logout")
+    public String logout(HttpSession session, HttpServletResponse response, HttpServletRequest request) {
         session.removeAttribute(WebConst.LOGIN_SESSION_KEY);
         Cookie cookie = new Cookie(WebConst.USER_IN_COOKIE, "");
         cookie.setMaxAge(0);
         response.addCookie(cookie);
-        try {
-            //response.sendRedirect(Commons.site_url());
-            response.sendRedirect(Commons.site_login());
-        } catch (IOException e) {
-            e.printStackTrace();
-            LOGGER.error("注销失败", e);
-        }
+        //response.sendRedirect(Commons.site_url());
+        return "admin/login";
     }
 }

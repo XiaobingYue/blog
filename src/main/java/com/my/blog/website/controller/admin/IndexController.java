@@ -75,15 +75,15 @@ public class IndexController extends BaseController {
         return "admin/profile";
     }
 
-    /**
-     * admin 退出登录
-     * @return
-     */
-    @GetMapping(value = "logout")
-    public String logout() {
-        System.out.println("index-----------logout");
-        return "admin/login";
-    }
+    ///**
+    // * admin 退出登录
+    // * @return
+    // */
+    //@GetMapping(value = "logout")
+    //public String logout() {
+    //    System.out.println("index-----------logout");
+    //    return "admin/login";
+    //}
 
 
     /**
