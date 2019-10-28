@@ -74,10 +74,10 @@ function allow_comment(obj) {
     var on = this_.find('.toggle-on.active').length;
     var off = this_.find('.toggle-off.active').length;
     if (on == 1) {
-        $('#allow_comment').val(false);
+        $('#allowComment').val(false);
     }
     if (off == 1) {
-        $('#allow_comment').val(true);
+        $('#allowComment').val(true);
     }
 }
 
@@ -86,10 +86,10 @@ function allow_ping(obj) {
     var on = this_.find('.toggle-on.active').length;
     var off = this_.find('.toggle-off.active').length;
     if (on == 1) {
-        $('#allow_ping').val(false);
+        $('#allowPing').val(false);
     }
     if (off == 1) {
-        $('#allow_ping').val(true);
+        $('#allowPing').val(true);
     }
 }
 
@@ -99,10 +99,10 @@ function allow_feed(obj) {
     var on = this_.find('.toggle-on.active').length;
     var off = this_.find('.toggle-off.active').length;
     if (on == 1) {
-        $('#allow_feed').val(false);
+        $('#allowFeed').val(false);
     }
     if (off == 1) {
-        $('#allow_feed').val(true);
+        $('#allowFeed').val(true);
     }
 }
 
